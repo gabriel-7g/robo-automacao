@@ -20,7 +20,7 @@ for linha in pagina_clientes.iter_rows(min_row=2):
     mensagem_completa = mensagem + pix
     
     # Criar links personalizados do whatssap e enviar mensagens para cada cliente com base na planilha
+    # Com base nos dados da planilha
     link_msg_whatsapp = f'https://web.whatsapp.com/send?phone={telefone}&text={quote(mensagem_completa)}'
+    webbrowser.open(link_msg_whatsapp)
 
-
-# Com base nos dados da planilha
