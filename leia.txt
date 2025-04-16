@@ -1,1 +1,3 @@
-Observação esteja logado no whatsapp web, NO SEU NAVEGADOR PRINCIPAL para não ocorrer erros.
+Observação: esteja logado no whatsapp web, NO SEU NAVEGADOR PRINCIPAL para não ocorrer erros.
+
+Observação: O Robô tem um tempo de 1 minuto para poder começar a funcionar então aguarde 1 minuto que ele irá começar a rodar

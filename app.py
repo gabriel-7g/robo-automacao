@@ -1,6 +1,12 @@
 import openpyxl 
 from urllib.parse import quote
 import webbrowser
+from time import sleep
+import pyautogui
+
+webbrowser.open('https://web.whatsapp.com/')
+sleep(30)
+
 
 # Ler planilha e guardar informações
 workbook = openpyxl.load_workbook('clientes.xlsx')
@@ -21,6 +27,19 @@ for linha in pagina_clientes.iter_rows(min_row=2):
     
     # Criar links personalizados do whatssap e enviar mensagens para cada cliente com base na planilha
     # Com base nos dados da planilha
-    link_msg_whatsapp = f'https://web.whatsapp.com/send?phone={telefone}&text={quote(mensagem_completa)}'
-    webbrowser.open(link_msg_whatsapp)
+    try:
+        link_msg_whatsapp = f'https://web.whatsapp.com/send?phone={telefone}&text={quote(mensagem_completa)}'
+        webbrowser.open(link_msg_whatsapp)
+        sleep(10)
+        seta = pyautogui.locateCenterOnScreen('seta.png')
+        sleep(5)
+        pyautogui.click(seta[0], seta[1])
+        sleep(5)
+        pyautogui.hotkey('ctrl','w')
+        sleep(5)
+    except:
+        print(f'Não foi possível enviar mensagem para {nome}')
+        with open('erros.txt', 'a',newline='',encoding='utf-8') as arquivo:
+            arquivo.write(f'{nome}, {telefone}')
+
 
