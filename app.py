@@ -20,10 +20,8 @@ for linha in pagina_clientes.iter_rows(min_row=2):
 
     # https://web.whatsapp.com/send?phone=555555&text=
     mensagem = f'Olá {nome}, o vencimento da sua internet ja passou do prazo com a data de {vencimento.strftime('%d/%m/%Y')} por favor pagar na seguinte chave pix '
-    pix = "Pix cnpj " \
-    "42514276000138 " \
-    "MacielFibra ou Jenniffer mayara gomes tome maciel telecomunicacoes Banco Itau"
-    mensagem_completa = mensagem + pix
+    # aqui você pode colocar outra mensagem para complementar exemplo: pix = 'Mande nesse código pix 000000'
+    mensagem_completa = mensagem # mensagem_completa = mensagem + pix 
     
     # Criar links personalizados do whatssap e enviar mensagens para cada cliente com base na planilha
     # Com base nos dados da planilha
